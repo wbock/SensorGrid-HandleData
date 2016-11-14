@@ -9,7 +9,7 @@ import controlP5.*;
 
 Serial myPort;	// The serial port
 
-float[] sensorValues = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+float[] sensorValues = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}; // Array for  4x4 = 16 sensor values, range 0...1024
 
 // Values from arduino
 StringList rawData = new StringList();
