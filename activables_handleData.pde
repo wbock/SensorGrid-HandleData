@@ -18,10 +18,16 @@ void setup () {
 	// General setup
 	size(800 , 800);
 	surface.setResizable(true);
+  textSize(45);
 
 	// Arduino setup
+  try {
+    
 	myPort = new Serial(this, Serial.list()[0], 9600);
 	myPort.bufferUntil('\n');
+  } catch (ArrayIndexOutOfBoundsException e) {
+    println("Port not found, is the arduino plugged in?");
+  }
 }
 
 void draw () {
@@ -31,6 +37,8 @@ void draw () {
       // Set fill based on pressure value
       fill(sensorValues[row * 4 + column] / 1024 * 255);
       rect(200 * row + 1, 200 * column + 1, 198, 198);
+      fill(0,150,150);
+      text((int)sensorValues[row * 4 + column],200 * row + 60, 200 * column + 125);
     }
   }
 }
