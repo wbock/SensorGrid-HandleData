@@ -30,17 +30,22 @@ void setup () {
 }
 
 void draw () {
+  String log = "";
   // Loop through 4x4 array, draw squares
   for(int row = 0; row < 3; row++) {
+    log += "\n";
     for(int column = 0; column < 6; column++) {
       // Set fill based on pressure value
       fill(sensorValues[row][column] / 1024 * 255);
+      log += sensorValues[row][column];
+      log += " ";
       rect(200 * column + 1, 200 * row + 1, 198, 198);
       fill(0,150,150);
       text((int)sensorValues[row][column], 200 * row + 60, 200 * column + 125);
     }
   }
   System.lineSeparator();
+  println(log);
 }
 
 void serialEvent (Serial myPort) {
