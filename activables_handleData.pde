@@ -41,7 +41,7 @@ void draw () {
       log += " ";
       rect(200 * column + 1, 200 * row + 1, 198, 198);
       fill(0,150,150);
-      text((int)sensorValues[row][column], 200 * row + 60, 200 * column + 125);
+      text((int)sensorValues[row][column], 200 * column + 60, 200 * row + 125);
     }
   }
   System.lineSeparator();
